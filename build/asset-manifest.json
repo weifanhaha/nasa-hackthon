@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/nasa-hackthon/static/css/main.8e18de48.chunk.css",
-    "main.js": "/nasa-hackthon/static/js/main.cc99ee86.chunk.js",
-    "main.js.map": "/nasa-hackthon/static/js/main.cc99ee86.chunk.js.map",
-    "runtime-main.js": "/nasa-hackthon/static/js/runtime-main.3fcfbe6f.js",
-    "runtime-main.js.map": "/nasa-hackthon/static/js/runtime-main.3fcfbe6f.js.map",
-    "static/js/2.a3cf7a05.chunk.js": "/nasa-hackthon/static/js/2.a3cf7a05.chunk.js",
-    "static/js/2.a3cf7a05.chunk.js.map": "/nasa-hackthon/static/js/2.a3cf7a05.chunk.js.map",
-    "index.html": "/nasa-hackthon/index.html",
-    "precache-manifest.52d3f3b96e1ce2b6e51a3ec712cb44fd.js": "/nasa-hackthon/precache-manifest.52d3f3b96e1ce2b6e51a3ec712cb44fd.js",
-    "service-worker.js": "/nasa-hackthon/service-worker.js",
-    "static/css/main.8e18de48.chunk.css.map": "/nasa-hackthon/static/css/main.8e18de48.chunk.css.map",
-    "static/media/coin.png": "/nasa-hackthon/static/media/coin.22ce2a1a.png",
-    "static/media/earth.jpg": "/nasa-hackthon/static/media/earth.08694108.jpg",
-    "static/media/leaf.png": "/nasa-hackthon/static/media/leaf.81530af0.png",
-    "static/media/maldives.jpg": "/nasa-hackthon/static/media/maldives.35c7f9a9.jpg",
-    "static/media/typhoon.jpeg": "/nasa-hackthon/static/media/typhoon.464b3a97.jpeg"
+    "main.css": "/nasa-hackthon/build/static/css/main.8e18de48.chunk.css",
+    "main.js": "/nasa-hackthon/build/static/js/main.2912ad0c.chunk.js",
+    "main.js.map": "/nasa-hackthon/build/static/js/main.2912ad0c.chunk.js.map",
+    "runtime-main.js": "/nasa-hackthon/build/static/js/runtime-main.62fad733.js",
+    "runtime-main.js.map": "/nasa-hackthon/build/static/js/runtime-main.62fad733.js.map",
+    "static/js/2.2db15709.chunk.js": "/nasa-hackthon/build/static/js/2.2db15709.chunk.js",
+    "static/js/2.2db15709.chunk.js.map": "/nasa-hackthon/build/static/js/2.2db15709.chunk.js.map",
+    "index.html": "/nasa-hackthon/build/index.html",
+    "precache-manifest.866477125696c27f21dbf2ee56dd7513.js": "/nasa-hackthon/build/precache-manifest.866477125696c27f21dbf2ee56dd7513.js",
+    "service-worker.js": "/nasa-hackthon/build/service-worker.js",
+    "static/css/main.8e18de48.chunk.css.map": "/nasa-hackthon/build/static/css/main.8e18de48.chunk.css.map",
+    "static/media/coin.png": "/nasa-hackthon/build/static/media/coin.22ce2a1a.png",
+    "static/media/earth.jpg": "/nasa-hackthon/build/static/media/earth.08694108.jpg",
+    "static/media/leaf.png": "/nasa-hackthon/build/static/media/leaf.81530af0.png",
+    "static/media/maldives.jpg": "/nasa-hackthon/build/static/media/maldives.35c7f9a9.jpg",
+    "static/media/typhoon.jpeg": "/nasa-hackthon/build/static/media/typhoon.464b3a97.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3fcfbe6f.js",
-    "static/js/2.a3cf7a05.chunk.js",
+    "static/js/runtime-main.62fad733.js",
+    "static/js/2.2db15709.chunk.js",
     "static/css/main.8e18de48.chunk.css",
-    "static/js/main.cc99ee86.chunk.js"
+    "static/js/main.2912ad0c.chunk.js"
   ]
 }
