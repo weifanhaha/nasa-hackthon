@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import styled, { keyframes } from "styled-components"
 
-import Script from "../assets/scripts2"
+import Script from "../assets/script3"
 
 import IconHeart from "../assets/images/heart.png"
 import IconCoin from "../assets/images/coin.png"
@@ -11,7 +11,7 @@ const BoardBackground = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: ${props => `url(${props.bgImg})`};
+  background: ${props => (props.bgImg ? `url(${props.bgImg})` : "#000000")};
   background-size: cover;
   z-index: 1;
   transition: all 0.7s ease-in-out;
