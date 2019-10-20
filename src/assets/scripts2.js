@@ -1,57 +1,83 @@
+import earth from "./images/earth.jpg"
+import morning from "./images/morning.jpg"
+import morning2 from "./images/morning2.jpg"
+import cars from "./images/cars.jpg"
+import starbuck from "./images/starbuck.jpg"
+import restaurant from "./images/restaurant.jpg"
+import typhoon from "./images/typhoon.jpeg"
+import univ from "./images/univ.jpg"
+import wave from "./images/wave.jpg"
+import taiwan from "./images/taiwan3.png"
+import cat from "./images/cat.jpg"
+
 const Script = {
   0: {
-    text: "歡迎來到 Better Life 遊戲",
-    continue: 1
+    text: ["Welcome to Better Life", "Your Goal is to Purchase Higher Score"],
+    continue: 1,
+    bgImg: earth
   },
   1: {
-    text: "你的目標是追求更好的生活",
-    continue: 2
+    text: ["盡可能地讓各項數值越高越好", "準備好了嗎，讓我們開始吧！"],
+    continue: 2,
+    bgImg: earth
   },
   2: {
-    text: ["可以是更好的心情、更多的財富、", "或更好的環境"],
-    continue: 3
+    text: ["高中第一天上課，鬧鐘響了", "叮鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴!"],
+    continue: 3,
+    bgImg: morning
   },
   3: {
-    text: ["盡可能地讓各項數值越高越好", "準備好了嗎，讓我們開始吧！"],
-    continue: 4
-  },
-  4: {
-    text: ["高中第一天上課，鬧鐘響了", "叮鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴!"],
-    continue: 5
-  },
-  5: {
     text: "鬧鐘響得很大聲，好吵",
     options: [
-      { text: "算了，起床吧。", lead_to: 6 },
-      { text: "再睡一下好了，齁齁齁", lead_to: 8 }
-    ]
+      { text: "算了，起床吧。", lead_to: 4 },
+      { text: "再睡一下好了，齁齁齁", lead_to: 6 }
+    ],
+    bgImg: morning
   },
-  6: {
+  4: {
     text: ["昨天玩到好晚心好累", "心情 -10"],
-    continue: 7,
-    effects: { mood: -10, money: 0, env: 0 }
+    continue: 5,
+    effects: { mood: -10, money: 0, env: 0 },
+    bgImg: morning2
   },
-  7: {
+  5: {
     text: "時間充裕，要怎麼上學",
     options: [
-      { text: "搭公車", lead_to: 9, co2: 12.0 },
+      { text: "搭公車", lead_to: 8, co2: 12.0 },
       { text: "當媽寶，讓媽媽載", lead_to: 9, co2: 17.3 },
-      { text: "騎腳踏車", lead_to: 5.0, co2: 5.0 }
-    ]
+      { text: "騎腳踏車", lead_to: 7, co2: 5.0 }
+    ],
+    bgImg: morning2
   },
-  8: {
+  6: {
     text: "時間快來不及了，要怎麼上學",
     options: [
-      { text: "搭公車", lead_to: 9, co2: 12.0 },
+      { text: "搭公車", lead_to: 8, co2: 12.0 },
       { text: "當媽寶，讓媽媽載", lead_to: 9, co2: 17.3 },
-      { text: "騎腳踏車", lead_to: 9, co2: 5.0 }
-    ]
+      { text: "騎腳踏車", lead_to: 7, co2: 5.0 }
+    ],
+    bgImg: morning2
   },
-  9: {
-    text: ["路上塞車，還是遲到了QQ", "心情 -20", "金錢 --", "環保 -10"],
+  7: {
+    text: ["我努力地踩著腳踏車，還是遲到了QQ", "心情 -20", "環保 +10"],
     options: [],
     continue: 10,
-    effects: { mood: -20, money: 0, env: -10 }
+    effects: { mood: -20, money: 0, env: 10 },
+    bgImg: cars
+  },
+  8: {
+    text: ["路上塞車，還是遲到了QQ", "心情 -20", "環保 +5"],
+    options: [],
+    continue: 10,
+    effects: { mood: -20, money: 0, env: 5 },
+    bgImg: cars
+  },
+  9: {
+    text: ["路上塞車，還是遲到了QQ", "心情 -20", "環保 -10"],
+    options: [],
+    continue: 10,
+    effects: { mood: -20, money: 0, env: -10 },
+    bgImg: cars
   },
   10: {
     text: ["不知不覺就大學了，有點缺錢", "要去哪裡打工？"],
@@ -60,37 +86,25 @@ const Script = {
       { text: "50嵐", lead_to: 12, co2: 12 },
       { text: "耍廢", lead_to: 13, co2: 0 },
       { text: "星巴克", lead_to: 14, co2: 35.0 }
-    ]
+    ],
+    bgImg: univ
   },
   11: {
-    text: [
-      "今年中部登革熱肆虐，暑假沒辦法回台中看阿公阿罵",
-      "心情 -30",
-      "金錢 -",
-      "環保 -"
-    ],
+    text: ["忍不住偷喝幾口，被店長斥責", "心情 -20", "金錢 -1000"],
     continue: 20,
-    effects: { mood: -30, money: 0, env: 0 }
+    effects: { mood: -20, money: -1000, env: 0 },
+    bgImg: starbuck
   },
   12: {
-    text: [
-      "今年中部登革熱肆虐，暑假沒辦法回台中看阿公阿罵",
-      "心情 -30",
-      "金錢 -",
-      "環保 -"
-    ],
+    text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000", "環保 --"],
     continue: 20,
-    effects: { mood: -30, money: 0, env: 0 }
+    effects: { mood: +5, money: 20000, env: 0 },
+    bgImg: starbuck
   },
   13: {
-    text: [
-      "今年中部登革熱肆虐，暑假沒辦法回台中看阿公阿罵",
-      "心情 -30",
-      "金錢 -",
-      "環保 -"
-    ],
+    text: ["在家躺著真不錯", "心情 +10", "金錢 -10000"],
     continue: 20,
-    effects: { mood: -30, money: 0, env: 0 }
+    effects: { mood: 10, money: -10000, env: 0 }
   },
   14: {
     text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000", "環保 --"],

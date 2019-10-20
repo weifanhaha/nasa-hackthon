@@ -96,8 +96,8 @@ const Script = {
     text: "今天老家出門聚餐，要吃什麼呢",
     options: [
       { text: "美式餐廳", lead_to: 31, co2: 35.0 },
-      { text: "台南牛肉火鍋", lead_to: 33, co2: 12.0 },
-      { text: "慈濟素食", lead_to: 34, co2: 5.0 }
+      { text: "台南牛肉火鍋", lead_to: 32, co2: 12.0 },
+      { text: "慈濟素食", lead_to: 32, co2: 5.0 }
     ],
     bgImg: restaurant
   },
