@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled, { keyframes } from "styled-components"
 
 // import Script2 from "../assets/scripts2"
-import Script from "../assets/scripts2"
+import Script from "../assets/script"
 
 import IconHeart from "../assets/images/heart.png"
 import IconCoin from "../assets/images/coin.png"
@@ -13,6 +13,7 @@ const BoardBackground = styled.div`
   width: 100vw;
   height: 100vh;
   background: ${props => (props.bgImg ? `url(${props.bgImg})` : "#000000")};
+  background-position: center;
   background-size: cover;
   z-index: 1;
   transition: all 0.7s ease-in-out;
@@ -90,7 +91,7 @@ const NavBar = styled.div`
 `
 
 const NavItem = styled.div`
-  width: 150px;
+  width: ${props => (props.wider ? "200px" : "150px")};
   padding: 20px;
   margin: 10px;
   color: white;
@@ -185,12 +186,12 @@ class ScriptBoard extends Component {
             <Icon bgImg={IconHeart}></Icon> {this.state.mood}
           </NavItem>
           <NavItem>
-            <Icon bgImg={IconCoin} />
-            {this.state.money}
-          </NavItem>
-          <NavItem>
             <Icon bgImg={IconLeaf} />
             {this.state.env}
+          </NavItem>
+          <NavItem wider>
+            <Icon bgImg={IconCoin} />
+            {this.state.money}
           </NavItem>
         </NavBar>
         <Content>

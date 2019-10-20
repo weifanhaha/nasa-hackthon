@@ -55,10 +55,10 @@ const Ice = styled.div`
   background: ${`url(${iceImg})`};
   background-size: cover;
   position: fixed;
-  bottom: -20px;
-  width: 300px;
-  height: 300px;
-  left: 40%;
+  bottom: -30px;
+  width: 600px;
+  height: 600px;
+  left: 29%;
   transform: translate(-50%, 0);
   transform-origin: center bottom;
   animation: ${Shrink} 2s linear forwards;
@@ -68,22 +68,60 @@ const Bear = styled.div`
   background: ${`url(${bearImg})`};
   background-size: cover;
   position: fixed;
-  width: 120px;
-  height: 160px;
+  width: 240px;
+  height: 320px;
   bottom: 80px;
   left: 50%;
   transform: translate(-50%, 0);
+`
+
+const Grow = keyframes`
+  from {
+    transform: scaleY(2);
+  }
+
+  to {
+    transform: scaleY(0);
+  }
 `
 
 const OneOOne = styled.div`
   background: ${`url(${OneOOneImg})`};
   background-size: cover;
   position: fixed;
-  width: 120px;
-  height: 300px;
-  bottom: 80px;
-  left: 50%;
+  width: 180px;
+  height: 450px;
+  bottom: 30px;
+  left: 35%;
   transform: translate(-80%, 0);
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 180px;
+    height: 200px;
+    transform-origin: top;
+    animation: ${Grow} 3s linear forwards;
+  }
+`
+
+const OneOOneDesc = styled.div`
+  position: fixed;
+  width: 500px;
+  height: 450px;
+  bottom: 30px;
+  left: 48%;
+  font-size: 24px;
+  line-height: 4.5;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 500px;
+    height: 200px;
+    transform-origin: top;
+    animation: ${Grow} 3s linear forwards;
+  }
 `
 
 const SmallOneOOneContainer = styled.div`
@@ -103,12 +141,22 @@ const SmallOneOOne = styled.div`
 const SeaLevel = styled.div`
   background: ${`url(${SeaLevelImg})`};
   background-size: cover;
-  width: 700px;
-  height: 400px;
+  width: 900px;
+  height: 500px;
   position: fixed;
   left: 50%;
-  top: 200px;
+  top: 160px;
   transform: translate(-50%, 0);
+`
+
+const Ref = styled.div`
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: gray;
+  a {
+    color: gray;
+  }
 `
 
 class EndBoard extends Component {
@@ -128,10 +176,8 @@ class EndBoard extends Component {
     const co2List = this.props.co2List
     const average = arr => arr.reduce((p, c) => p + c, 0) / arr.length
     const co2Avg = average(co2List)
-    // co2Avg = Math.round10(co2Avg, -1)
     console.log(co2Avg)
     return Math.round((co2Avg * 100) / 12) - 100
-    // return average(co2List)
   }
 
   get co2101() {
@@ -168,6 +214,15 @@ class EndBoard extends Component {
               相當於一年多排放約 {this.co2101} 棟 101 的量{" "}
             </Title>
             <OneOOne />
+            <OneOOneDesc>
+              美式餐廳進口美國牛 - 35 噸
+              <br />
+              星巴克進口巴西咖啡豆 - 35 噸
+              <br />
+              開車上學 - 17 噸
+              <br />
+              每人每年基本排放 - 12 噸
+            </OneOOneDesc>
           </Content>
         </BoardBackground>
       )
@@ -226,6 +281,18 @@ class EndBoard extends Component {
           <Title hover onClick={() => this.props.onChangeStep(1)}>
             重來一次
           </Title>
+          <Ref>
+            Some pictures{" "}
+            <a href="http://www.freepik.com">
+              Designed by tirachardz / Freepik
+            </a>
+            <br />
+            星巴克圖片由saraj在Pixabay上發布
+            <br />
+            校門圖片由David Mark在Pixabay上發布
+            <br />
+            貓圖片由imarksm在Pixabay上發布
+          </Ref>
         </BoardBackground>
       )
     }
