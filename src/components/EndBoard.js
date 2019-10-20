@@ -187,7 +187,7 @@ class EndBoard extends Component {
 
   get seaLevel() {
     console.log(this.co2Mul)
-    const result = Math.round(1.6 * (this.co2Mul / 100) * 10) / 10
+    const result = Math.round(0.65 * (1 + this.co2Mul / 100) * 10) / 10
     console.log(result)
     return result
   }

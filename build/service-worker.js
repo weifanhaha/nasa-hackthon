@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/nasa-hackthon/build/precache-manifest.6e9ea78410d6b4ad890e513cce133b56.js"
+  "/nasa-hackthon/build/precache-manifest.c61576a199d4b79b4c81fa82ee0f77d1.js"
 );
 
 self.addEventListener('message', (event) => {
