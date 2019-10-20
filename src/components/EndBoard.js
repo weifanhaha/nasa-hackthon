@@ -7,9 +7,8 @@ import OneOOneImg from "../assets/images/101.png"
 import SeaLevelImg from "../assets/images/SeaLevel.GIF"
 
 const BoardBackground = styled.div`
-  position: fixed;
   width: 100vw;
-  height: 100vh;
+  min-height: 80vh;
   background: ${props => (props.bgImg ? `url(${props.bgImg})` : "#ffffff")};
   background-size: cover;
   z-index: 1;
@@ -183,7 +182,7 @@ class EndBoard extends Component {
     const co2List = this.props.co2List
     const sum = arr => arr.reduce((acc, val) => acc + val)
     const allCo2 = sum(co2List)
-    return Math.round((allCo2 * 10) / 100) / 10
+    return Math.round((allCo2 * 3 * 10) / 105) / 10
   }
 
   get seaLevel() {
@@ -191,6 +190,12 @@ class EndBoard extends Component {
     const result = Math.round(1.6 * (this.co2Mul / 100) * 10) / 10
     console.log(result)
     return result
+  }
+
+  get textList() {
+    let list = this.props.textList
+    list.push("(每人每年基本排放 12 噸)")
+    return list
   }
 
   renderSwitch() {
@@ -224,17 +229,25 @@ class EndBoard extends Component {
           >
             <Title>
               你的行為多排放了 {this.co2Mul} % 的二氧化碳 <br />
-              相當於一年多排放約 {this.co2101} 棟 101 的量{" "}
+              相當於一年排放約 {this.co2101} 棟 101 的量{" "}
             </Title>
             <OneOOne />
             <OneOOneDesc>
-              美式餐廳進口美國牛 - 35 噸
+              {this.textList.map(text => {
+                return (
+                  <React.Fragment>
+                    {text}
+                    <br />
+                  </React.Fragment>
+                )
+              })}
+              {/* 美式餐廳進口美國牛 - 35 噸
               <br />
               星巴克進口巴西咖啡豆 - 35 噸
               <br />
               開車上學 - 17 噸
               <br />
-              每人每年基本排放 - 12 噸
+              每人每年基本排放 - 12 噸 */}
             </OneOOneDesc>
           </Content>
         </BoardBackground>
@@ -303,7 +316,7 @@ class EndBoard extends Component {
       return (
         <BoardBackground>
           <Title>The End</Title>
-          <Title hover onClick={() => this.props.onChangeStep(1)}>
+          <Title hover onClick={this.props.onReset}>
             重來一次
           </Title>
           <Ref>

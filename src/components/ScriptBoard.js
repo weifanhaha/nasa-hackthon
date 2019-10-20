@@ -122,6 +122,19 @@ const Icon = styled.div`
 //   }
 // }
 
+const textDic = {
+  搭公車: "搭大眾運輸上學: 12 噸",
+  "當媽寶，讓媽媽載": "搭車上學: 17 噸",
+  騎腳踏車: "騎腳踏車上學: 5 噸",
+  天仁茗茶: "天仁茗茶台灣茶葉: 5 噸",
+  "50嵐": "手搖飲料進口茶葉: 12 噸",
+  耍廢: "在家耍廢基本上不會有額外二氧化碳: 0 噸",
+  星巴克: "星巴克進口巴西咖啡豆: 35 噸",
+  美式餐廳: "美式餐廳進口美國牛: 35 噸",
+  台南牛肉火鍋: "台灣溫體牛當地食材: 12 噸",
+  慈濟素食: "慈濟素食吃素減碳: 5 噸"
+}
+
 class ScriptBoard extends Component {
   constructor(props) {
     super(props)
@@ -143,8 +156,10 @@ class ScriptBoard extends Component {
 
   handleOptionClick = option => {
     this.setState({ scriptIndex: option.lead_to })
-    if (option.co2) {
+    if (option.co2 !== undefined) {
       this.props.onChangeCo2List(option.co2)
+      this.props.onSaveText(textDic[option.text])
+
       // let co2List = this.state.co2List
       // co2List.push(option.co2)
       // this.state({ co2List: co2List })
