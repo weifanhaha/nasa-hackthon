@@ -179,7 +179,10 @@ class ScriptBoard extends Component {
 
   render() {
     return (
-      <BoardBackground bgImg={this.currentScript.bgImg}>
+      <BoardBackground
+        bgImg={this.currentScript.bgImg}
+        onClick={this.handleMaskClick}
+      >
         <Mask onClick={this.handleMaskClick} />
         <NavBar>
           <NavItem>

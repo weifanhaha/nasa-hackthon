@@ -12,7 +12,7 @@ import cat from "./images/cat.jpg"
 
 const Script = {
   0: {
-    text: ["歡迎來到 Better Life 遊戲", "你的目標是追求更好的生活"],
+    text: ["Welcome to Better Life", "Your Goal is to Purchase Higher Score"],
     continue: 1,
     bgImg: earth
   },

@@ -191,7 +191,11 @@ class EndBoard extends Component {
   renderSwitch() {
     if (this.state.step === 0) {
       return (
-        <BoardBackground>
+        <BoardBackground
+          onClick={() => {
+            this.onChangeStep(1)
+          }}
+        >
           <Content
             onClick={() => {
               this.onChangeStep(1)
@@ -203,7 +207,11 @@ class EndBoard extends Component {
       )
     } else if (this.state.step === 1) {
       return (
-        <BoardBackground>
+        <BoardBackground
+          onClick={() => {
+            this.onChangeStep(2)
+          }}
+        >
           <Content
             onClick={() => {
               this.onChangeStep(2)
@@ -228,7 +236,11 @@ class EndBoard extends Component {
       )
     } else if (this.state.step === 2) {
       return (
-        <BoardBackground>
+        <BoardBackground
+          onClick={() => {
+            this.onChangeStep(3)
+          }}
+        >
           <Content
             onClick={() => {
               this.onChangeStep(3)
@@ -249,7 +261,11 @@ class EndBoard extends Component {
       )
     } else if (this.state.step === 3) {
       return (
-        <BoardBackground>
+        <BoardBackground
+          onClick={() => {
+            this.onChangeStep(4)
+          }}
+        >
           <Content
             onClick={() => {
               this.onChangeStep(4)
@@ -263,7 +279,11 @@ class EndBoard extends Component {
       )
     } else if (this.state.step === 4) {
       return (
-        <BoardBackground>
+        <BoardBackground
+          onClick={() => {
+            this.onChangeStep(5)
+          }}
+        >
           <Content
             onClick={() => {
               this.onChangeStep(5)
