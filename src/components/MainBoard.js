@@ -8,9 +8,9 @@ class MainBoard extends Component {
     super(props)
 
     this.state = {
-      step: 2,
-      co2List: [17.3, 35, 35, 35],
-      // co2List: [],
+      step: 1,
+      // co2List: [17.3, 35, 35, 35],
+      co2List: [],
       textList: []
     }
   }
