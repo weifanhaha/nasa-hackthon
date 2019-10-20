@@ -18,45 +18,59 @@ const Script = {
   },
   1: {
     text: ["盡可能地讓各項數值越高越好", "準備好了嗎，讓我們開始吧！"],
-    continue: 4,
+    continue: 2,
     bgImg: earth
   },
-  4: {
+  2: {
     text: ["高中第一天上課，鬧鐘響了", "叮鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴鈴!"],
-    continue: 5,
+    continue: 3,
     bgImg: morning
   },
-  5: {
+  3: {
     text: "鬧鐘響得很大聲，好吵",
     options: [
-      { text: "算了，起床吧。", lead_to: 6 },
-      { text: "再睡一下好了，齁齁齁", lead_to: 8 }
+      { text: "算了，起床吧。", lead_to: 4 },
+      { text: "再睡一下好了，齁齁齁", lead_to: 6 }
     ],
     bgImg: morning
   },
-  6: {
+  4: {
     text: ["昨天玩到好晚心好累", "心情 -10"],
-    continue: 7,
+    continue: 5,
     effects: { mood: -10, money: 0, env: 0 },
     bgImg: morning2
   },
-  7: {
+  5: {
     text: "時間充裕，要怎麼上學",
     options: [
-      { text: "搭公車", lead_to: 9, co2: 12.0 },
+      { text: "搭公車", lead_to: 8, co2: 12.0 },
       { text: "當媽寶，讓媽媽載", lead_to: 9, co2: 17.3 },
-      { text: "騎腳踏車", lead_to: 5.0, co2: 5.0 }
+      { text: "騎腳踏車", lead_to: 7, co2: 5.0 }
     ],
     bgImg: morning2
   },
-  8: {
+  6: {
     text: "時間快來不及了，要怎麼上學",
     options: [
-      { text: "搭公車", lead_to: 9, co2: 12.0 },
+      { text: "搭公車", lead_to: 8, co2: 12.0 },
       { text: "當媽寶，讓媽媽載", lead_to: 9, co2: 17.3 },
-      { text: "騎腳踏車", lead_to: 9, co2: 5.0 }
+      { text: "騎腳踏車", lead_to: 7, co2: 5.0 }
     ],
     bgImg: morning2
+  },
+  7: {
+    text: ["我努力地踩著腳踏車，還是遲到了QQ", "心情 -20", "環保 +10"],
+    options: [],
+    continue: 10,
+    effects: { mood: -20, money: 0, env: 10 },
+    bgImg: cars
+  },
+  8: {
+    text: ["路上塞車，還是遲到了QQ", "心情 -20", "環保 +5"],
+    options: [],
+    continue: 10,
+    effects: { mood: -20, money: 0, env: 5 },
+    bgImg: cars
   },
   9: {
     text: ["路上塞車，還是遲到了QQ", "心情 -20", "環保 -10"],
@@ -68,12 +82,29 @@ const Script = {
   10: {
     text: ["不知不覺就大學了，有點缺錢", "要去哪裡打工？"],
     options: [
-      { text: "天仁茗茶", lead_to: 14, co2: 5 },
-      { text: "50嵐", lead_to: 14, co2: 12 },
-      { text: "耍廢", lead_to: 14, co2: 0 },
+      { text: "天仁茗茶", lead_to: 11, co2: 5 },
+      { text: "50嵐", lead_to: 12, co2: 12 },
+      { text: "耍廢", lead_to: 13, co2: 0 },
       { text: "星巴克", lead_to: 14, co2: 35.0 }
     ],
     bgImg: univ
+  },
+  11: {
+    text: ["忍不住偷喝幾口，被店長斥責", "心情 -20", "金錢 -1000"],
+    continue: 30,
+    effects: { mood: -20, money: -1000, env: 0 },
+    bgImg: starbuck
+  },
+  12: {
+    text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000"],
+    continue: 15,
+    effects: { mood: +5, money: 20000, env: 0 },
+    bgImg: starbuck
+  },
+  13: {
+    text: ["在家躺著真不錯", "心情 +10", "金錢 -10000"],
+    continue: 30,
+    effects: { mood: 10, money: -10000, env: 0 }
   },
   14: {
     text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000"],
@@ -97,13 +128,13 @@ const Script = {
     options: [
       { text: "美式餐廳", lead_to: 31, co2: 35.0 },
       { text: "台南牛肉火鍋", lead_to: 32, co2: 12.0 },
-      { text: "慈濟素食", lead_to: 32, co2: 5.0 }
+      { text: "慈濟素食", lead_to: 36, co2: 5.0 }
     ],
     bgImg: restaurant
   },
   31: {
     text: ["好貴...", "心情 +20", "金錢 -10000", "環保 -10"],
-    continue: 36,
+    continue: 32,
     effects: { mood: 20, money: -10000, env: -10 },
     bgImg: restaurant
   },
@@ -124,11 +155,11 @@ const Script = {
       "極端氣候越來越常發生，",
       "買的房子被海水淹沒，損失慘重...",
       "心情 -50",
-      "金錢 -870000000",
+      "金錢 -120000000",
       "環保 -10"
     ],
     continue: 50,
-    effects: { mood: -50, money: -870000000, env: -10 },
+    effects: { mood: -50, money: -120000000, env: -10 },
     bgImg: typhoon
   },
   50: {

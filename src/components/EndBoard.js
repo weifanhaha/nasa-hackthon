@@ -176,7 +176,6 @@ class EndBoard extends Component {
     const co2List = this.props.co2List
     const average = arr => arr.reduce((p, c) => p + c, 0) / arr.length
     const co2Avg = average(co2List)
-    console.log(co2Avg)
     return Math.round((co2Avg * 100) / 12) - 100
   }
 
@@ -184,8 +183,14 @@ class EndBoard extends Component {
     const co2List = this.props.co2List
     const sum = arr => arr.reduce((acc, val) => acc + val)
     const allCo2 = sum(co2List)
-    console.log(allCo2)
-    return Math.round(allCo2 / 105)
+    return Math.round((allCo2 * 10) / 100) / 10
+  }
+
+  get seaLevel() {
+    console.log(this.co2Mul)
+    const result = Math.round(1.6 * (this.co2Mul / 100) * 10) / 10
+    console.log(result)
+    return result
   }
 
   renderSwitch() {
@@ -249,10 +254,10 @@ class EndBoard extends Component {
             <Title>
               過去的數十年中
               <br />
-              你一共排放了約 80 棟 101 的二氧化碳
+              你一共排放了約 {this.co2101 * 80} 棟 101 的二氧化碳
             </Title>
             <SmallOneOOneContainer>
-              {[...Array(80)].map(idx => {
+              {[...Array(Math.round(this.co2101 * 80))].map(idx => {
                 return <SmallOneOOne key={idx} />
               })}
             </SmallOneOOneContainer>
@@ -289,7 +294,7 @@ class EndBoard extends Component {
               this.onChangeStep(5)
             }}
           >
-            <Title>使海平面上升了 1.6 公尺</Title>
+            <Title>使海平面上升了 {this.seaLevel} 公尺</Title>
             <SeaLevel />
           </Content>
         </BoardBackground>
