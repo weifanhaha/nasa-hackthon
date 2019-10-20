@@ -29,10 +29,25 @@ const Script = {
   5: {
     text: "鬧鐘響得很大聲，好吵",
     options: [
-      { text: "算了，起床吧。", lead_to: 8 },
+      { text: "算了，起床吧。", lead_to: 6 },
       { text: "再睡一下好了，齁齁齁", lead_to: 8 }
     ],
     bgImg: morning
+  },
+  6: {
+    text: ["昨天玩到好晚心好累", "心情 -10"],
+    continue: 7,
+    effects: { mood: -10, money: 0, env: 0 },
+    bgImg: morning2
+  },
+  7: {
+    text: "時間充裕，要怎麼上學",
+    options: [
+      { text: "搭公車", lead_to: 9, co2: 12.0 },
+      { text: "當媽寶，讓媽媽載", lead_to: 9, co2: 17.3 },
+      { text: "騎腳踏車", lead_to: 5.0, co2: 5.0 }
+    ],
+    bgImg: morning2
   },
   8: {
     text: "時間快來不及了，要怎麼上學",
@@ -44,7 +59,7 @@ const Script = {
     bgImg: morning2
   },
   9: {
-    text: ["路上塞車，還是遲到了QQ", "心情 -20", "金錢 --", "環保 -10"],
+    text: ["路上塞車，還是遲到了QQ", "心情 -20", "環保 -10"],
     options: [],
     continue: 10,
     effects: { mood: -20, money: 0, env: -10 },
@@ -61,7 +76,7 @@ const Script = {
     bgImg: univ
   },
   14: {
-    text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000", "環保 --"],
+    text: ["店長：辛苦拉，這是你的薪水", "心情 +5", "金錢 +20000"],
     continue: 15,
     effects: { mood: +5, money: 20000, env: 0 },
     bgImg: starbuck
@@ -71,7 +86,6 @@ const Script = {
       "今年中部登革熱肆虐",
       "暑假沒辦法回台中看阿公阿罵",
       "心情 -30",
-      "金錢 --",
       "環保 -10"
     ],
     continue: 30,
@@ -89,17 +103,12 @@ const Script = {
   },
   31: {
     text: ["好貴...", "心情 +20", "金錢 -10000", "環保 -10"],
-    continue: 32,
+    continue: 36,
     effects: { mood: 20, money: -10000, env: -10 },
     bgImg: restaurant
   },
   32: {
-    text: [
-      "最近颱風越來越劇烈，家裡樓下常常淹水...",
-      "心情 -20",
-      "金錢 -",
-      "環保 -10"
-    ],
+    text: ["最近颱風越來越劇烈，家裡樓下常常淹水...", "心情 -20", "環保 -10"],
     continue: 36,
     effects: { mood: -20, money: 0, env: -10 },
     bgImg: typhoon
@@ -112,7 +121,8 @@ const Script = {
   },
   41: {
     text: [
-      "極端氣候越來越常發生，蓋的工廠被海水淹沒，損失慘重...",
+      "極端氣候越來越常發生，",
+      "買的房子被海水淹沒，損失慘重...",
       "心情 -50",
       "金錢 -870000000",
       "環保 -10"

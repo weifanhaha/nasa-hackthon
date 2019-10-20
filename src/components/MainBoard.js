@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import styled, { keyframes } from "styled-components"
 
 import ScriptBoard from "./ScriptBoard"
 import EndBoard from "./EndBoard"

@@ -1,7 +1,3 @@
-import earth from "./images/earth.jpg"
-import maldives from "./images/maldives.jpg"
-import typhoon from "./images/typhoon.jpeg"
-
 const Script = {
   0: {
     text: "歡迎來到 Better Life 遊戲",
